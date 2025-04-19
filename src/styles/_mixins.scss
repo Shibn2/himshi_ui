@@ -1,0 +1,12 @@
+// Font mixins
+@mixin font-style(
+  $size,
+  $weight: normal,
+  $family: "roboto",
+  $line-height: normal
+) {
+  font-size: $size;
+  font-weight: $weight;
+  font-family: $family, sans-serif;
+  line-height: $line-height;
+}

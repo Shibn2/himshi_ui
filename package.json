@@ -9,7 +9,9 @@
     "build": "rollup -c",
     "prepublishOnly": "npm run build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "generate": "node scripts/create-component.js",
+    "generate:hybrid": "node scripts/create-hybrid-component.js"
   },
   "keywords": [],
   "author": "",
@@ -23,8 +25,10 @@
     "@babel/preset-react": "^7.26.3",
     "@chromatic-com/storybook": "^3.2.6",
     "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.3",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-typescript": "^12.1.2",
+    "@rollup/plugin-url": "^8.0.2",
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/addon-onboarding": "^8.6.12",
     "@storybook/blocks": "^8.6.12",
@@ -32,6 +36,7 @@
     "@storybook/react": "^8.6.12",
     "@storybook/react-vite": "^8.6.12",
     "@storybook/test": "^8.6.12",
+    "@types/node": "^22.14.1",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
     "@vitest/browser": "^3.1.1",
@@ -45,7 +50,12 @@
     "sass": "^1.86.0",
     "storybook": "^8.6.12",
     "typescript": "^5.8.2",
+    "vite": "^6.3.1",
     "vitest": "^3.1.1"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "eslintConfig": {
     "extends": [

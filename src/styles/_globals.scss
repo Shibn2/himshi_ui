@@ -1,0 +1,50 @@
+@import "./variables.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  margin: 0;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+h1 h2 {
+  margin: $spacing-lg 0;
+  @media screen and (min-width: $screen-md) {
+    margin: $spacing-xl 0;
+  }
+}
+h3 {
+  margin: $spacing-md 0;
+  @media screen and (min-width: $screen-md) {
+    margin: $spacing-lg 0;
+  }
+}
+h4 h5 h6 {
+  margin: $spacing-sm 0;
+  @media screen and (min-width: $screen-md) {
+    margin: $spacing-md 0;
+  }
+}
+
+span label {
+  margin: $spacing-sm 0;
+  @media screen and (min-width: $screen-md) {
+    margin: $spacing-md 0;
+  }
+}
+
+p {
+  margin: $spacing-xsm 0;
+  @media screen and (min-width: $screen-md) {
+    margin: $spacing-sm 0;
+  }
+}

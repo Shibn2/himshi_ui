@@ -1,0 +1,53 @@
+// Light Theme Colors (SCSS Variables)
+$light-primary-color: #ffffff;
+$light-secondary-color: #9a9b9b;
+$light-primary-text-color: #000000;
+$light-secondary-text-color: #ffffff;
+
+// Dark Theme Colors (SCSS Variables)
+$dark-primary-color: #1e1e1e;
+$dark-secondary-color: #444;
+$dark-primary-text-color: #f8f9fa;
+$dark-background-color: #333;
+
+// Spacing variables
+$spacing-xsm: 6px;
+$spacing-sm: 10px;
+$spacing-md: 16px;
+$spacing-lg: 32px;
+$spacing-xl: 64px;
+
+// screen categories
+$screen-sm: 480px;
+$screen-md: 768px;
+$screen-lg: 1024px;
+$screen-xl: 1200px;
+
+// font-size
+$font-size-xsm: 10px;
+$font-size-sm: 14px;
+$font-size-md: 18px;
+$font-size-lg: 28px;
+$font-size-xl: 58px;
+$font-size-xxl: 80px;
+
+// Define theme variables in :root (Default = Light Theme)
+:root {
+  --primary-color: #{$light-primary-color};
+  --secondary-color: #{$light-secondary-color};
+  --secondary-text-color: #{$light-secondary-text-color};
+  --primary-text-color: #{$light-primary-text-color};
+  --background-color: #{$light-primary-color};
+  --screen-sm: $screen-sm;
+  --screen-md: $screen-md;
+  --screen-lg: $screen-lg;
+  --screen-xl: $screen-xl;
+}
+
+// Dark Theme Overrides (for .dark-theme class)
+.dark-theme {
+  --primary-color: #{$dark-primary-color};
+  --secondary-color: #{$dark-secondary-color};
+  --text-color: #{$dark-primary-text-color};
+  --background-color: #{$dark-background-color};
+}

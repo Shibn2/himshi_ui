@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
+    "types": ["node"],
     "allowSyntheticDefaultImports": true,
     "module": "ESNext",
     "moduleResolution": "Node",
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "downlevelIteration": true
   },
-  "include": ["src"]
+  "include": ["src", "src/types"]
 }

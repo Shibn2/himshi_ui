@@ -1,0 +1,130 @@
+@import "./variables.scss";
+
+.flex-row {
+  display: flex;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.grid {
+  display: grid;
+}
+
+// Padding mixins
+
+.padding-sm {
+  padding: $spacing-xsm $spacing-xsm;
+  @media screen and (min-width: $screen-md) {
+    padding: $spacing-xsm $spacing-sm;
+  }
+}
+
+.padding-md {
+  padding: $spacing-xsm $spacing-sm;
+  @media screen and (min-width: $screen-md) {
+    padding: $spacing-sm $spacing-sm;
+  }
+}
+
+.padding-lg {
+  padding: $spacing-md $spacing-md;
+  @media screen and (min-width: $screen-md) {
+    padding: $spacing-md $spacing-lg;
+  }
+}
+
+// Margin mixins
+
+.m-sm {
+  margin: $spacing-xsm;
+  @media screen and (min-width: $screen-md) {
+    margin: $spacing-xsm $spacing-sm;
+  }
+}
+
+.m-md {
+  margin: $spacing-sm;
+  @media screen and (min-width: $screen-md) {
+    margin: $spacing-sm $spacing-md;
+  }
+}
+
+.m-lg {
+  margin: $spacing-md;
+  @media screen and (min-width: $screen-md) {
+    margin: $spacing-md $spacing-lg;
+  }
+}
+
+// Border
+.border-sm {
+  border: 1px solid var(--primary-text-color);
+  @media screen and (min-width: $screen-md) {
+    border: 2px solid var(--primary-text-color);
+  }
+}
+
+.border-sm {
+  border: 2px solid var(--primary-text-color);
+  @media screen and (min-width: $screen-md) {
+    border: 3px solid var(--primary-text-color);
+  }
+}
+
+// Flex related items
+.gap-sm {
+  gap: $spacing-sm;
+  @media screen and (min-width: $screen-md) {
+    gap: $spacing-md;
+  }
+}
+
+.gap-m {
+  gap: $spacing-md;
+  @media screen and (min-width: $screen-md) {
+    gap: $spacing-lg;
+  }
+}
+
+.gap-lg {
+  gap: $spacing-lg;
+  @media screen and (min-width: $screen-md) {
+    gap: $spacing-xl;
+  }
+}
+
+.heading-md {
+  @include font-style($font-size-md, 700, "roboto");
+  @media screen and (min-width: $screen-md) {
+    @include font-style($font-size-lg, 700, "roboto");
+  }
+}
+
+.heading-lg {
+  @include font-style($font-size-lg, 700, "roboto");
+  @media screen and (min-width: $screen-md) {
+    @include font-style($font-size-xl, 700, "roboto");
+  }
+}
+
+.body-text-xsm {
+  @include font-style($font-size-xsm, 100, "roboto");
+  @media screen and (min-width: $screen-md) {
+    @include font-style($font-size-sm, 100, "roboto");
+  }
+}
+
+.body-text-sm {
+  @include font-style($font-size-sm, 100, "roboto");
+  @media screen and (min-width: $screen-md) {
+    @include font-style($font-size-md, 200, "roboto");
+  }
+}
+
+.body-text-md {
+  @include font-style($font-size-md, 200, "roboto");
+  @media screen and (min-width: $screen-md) {
+    @include font-style($font-size-lg, 200, "roboto");
+  }
+}

@@ -1,0 +1,30 @@
+.carousel {
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+  // your styles here
+  .carousel_frame {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s ease-in-out;
+  }
+  .carousel_card {
+    height: 80vh;
+    width: 100%;
+    background-color: grey;
+    box-sizing: border-box;
+  }
+  .btn_group {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    button {
+      width: 3px;
+      height: 30px;
+      background-color: #99ff44;
+      border: none;
+    }
+  }
+}

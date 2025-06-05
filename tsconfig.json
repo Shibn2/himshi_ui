@@ -1,11 +1,22 @@
 {
   "compilerOptions": {
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "outDir": "dist",
+    "strict": true,
+    "isolatedModules": false,
+    "target": "ESNext",
     "types": ["node"],
     "allowSyntheticDefaultImports": true,
     "module": "ESNext",
-    "moduleResolution": "Node",
     "jsx": "react-jsx",
-    "downlevelIteration": true
+    "moduleResolution": "node",
+    "downlevelIteration": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "baseUrl": "."
   },
-  "include": ["src", "src/types"]
+  "include": ["src", "src/types"],
+  "exclude": ["dist", "node_modules"]
 }

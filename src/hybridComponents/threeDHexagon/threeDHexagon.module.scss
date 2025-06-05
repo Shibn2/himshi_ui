@@ -1,0 +1,80 @@
+.hexagonWrapper {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.hexagon {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  transform-style: preserve-3d;
+  transform: rotateX(20deg) rotateY(30deg);
+  animation: spin 10s linear infinite;
+}
+
+.face {
+  position: absolute;
+  width: 120px;
+  height: 130px;
+  background: #fcfcfc;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  border: 3px solid #010f08;
+}
+
+.front {
+  transform: translateZ(30px);
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(30px);
+  background: #fffefe;
+}
+
+.side {
+  position: absolute;
+  width: 64px;
+  height: 60px;
+  background: #fdfdfd;
+  opacity: 0.95;
+  left: 30px;
+  top: 35px;
+  transform-origin: center;
+  border: 3px solid #010f05;
+}
+
+/* Fake 6 rectangle side edges */
+.side1 {
+  transform: rotateX(90deg) rotateY(330deg) translateZ(60px);
+}
+.side2 {
+  transform: rotateX(90deg) rotateY(30deg) translateZ(60px);
+}
+.side3 {
+  transform: rotateX(90deg) rotateY(90deg) translateZ(60px);
+}
+.side4 {
+  transform: rotateX(90deg) rotateY(150deg) translateZ(60px);
+}
+.side5 {
+  transform: rotateX(90deg) rotateY(210deg) translateZ(60px);
+}
+.side6 {
+  transform: rotateX(90deg) rotateY(270deg) translateZ(60px);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}

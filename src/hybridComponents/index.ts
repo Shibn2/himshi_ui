@@ -1,0 +1,7 @@
+export { default as ExperienceCard } from "./experienceCard/index";
+export { default as NavWheel } from "./navWheel/index";
+export { default as Contact } from "./contact/index";
+export { default as ExperienceCard2 } from "./experienceCard2/index";
+export { default as HomeProfile } from "./homeProfile/index";
+export { default as HomeTitle } from "./homeTitle/index";
+export { default as HomeBird } from "./homeBird/index";

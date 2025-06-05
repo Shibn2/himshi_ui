@@ -1,0 +1,35 @@
+.hometitle {
+  // your styles here
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hometitle_wrapper {
+  max-width: 1100px;
+  position: relative;
+}
+.name {
+  font-size: 30px;
+  @media screen and (min-width: var(--screen-sm)) {
+    font-size: 48px;
+  }
+  @media screen and (min-width: var(--screen-lg)) {
+    font-size: 92px;
+  }
+}
+.job {
+  position: absolute;
+  margin-top: -30px;
+  right: 0;
+  color: var(--interactive-color);
+  font-size: 20px;
+  @media screen and (min-width: var(--screen-sm)) {
+    margin-top: -60px;
+    font-size: 30px;
+  }
+  @media screen and (min-width: var(--screen-lg)) {
+    margin-top: -100px;
+    font-size: 52px;
+  }
+}

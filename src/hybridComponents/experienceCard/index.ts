@@ -1,1 +1,3 @@
-export * from './experienceCard';
+import ExperienceCard from "./experienceCard";
+
+export default ExperienceCard;

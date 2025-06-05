@@ -1,41 +1,40 @@
 import type { Meta, StoryObj } from '@storybook/react';
-  import { carousel } from './carousel';
+  import Carousel from './carousel';
   
 //Testing data
 const SLIDE_LIST = [
   {
-    text: "Slide 1"
+    card:<h4>"Slide 1"</h4>
   },
   {
-    text: "Slide 2"
+    card:<h4>"Slide 2"</h4>
   },
   {
-    text: "Slide 3"
+    card:<h4>"Slide 3"</h4>
   },
   {
-    text: "Slide 4"
+    card:<h4>"Slide 4"</h4>
   },
   {
-    text: "Slide 5"
+    card:<h4>"Slide 5"</h4>
   },
   {
-    text: "Slide 6"
+    card:<h4>"Slide 6"</h4>
   },
   {
-    text: "Slide 7"
-  }
+    card:<h4>"Slide 7"</h4>
+  },
 ]  
-  const meta: Meta<typeof carousel> = {
-    component: carousel,
-    title: 'Components/carousel',
+  const meta: Meta<typeof Carousel> = {
+    component: Carousel,
+    title: 'Components/Carousel',
   };
   
   export default meta;
-  type Story = StoryObj<typeof carousel>;
+  type Story = StoryObj<typeof Carousel>;
   
   export const Default: Story = {
     args: {
       slidesList: SLIDE_LIST,
     },
   };
-  

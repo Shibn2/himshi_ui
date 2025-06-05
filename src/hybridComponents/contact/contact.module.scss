@@ -1,0 +1,14 @@
+.contact {
+  // your styles here
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-lg);
+}
+.contact_list {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--secondary-text-color);
+  gap: var(--spacing-md);
+}

@@ -7,16 +7,18 @@
 body {
   margin: 0;
   padding: 0;
+  perspective: 800px;
 }
 
-.button {
+button {
   margin: 0;
   background-color: var(--primary-color);
   color: var(--text-color);
   background-color: var(--background-color);
 }
 
-h1 h2 {
+h1,
+h2 {
   margin: $spacing-lg 0;
   @media screen and (min-width: $screen-md) {
     margin: $spacing-xl 0;
@@ -28,14 +30,17 @@ h3 {
     margin: $spacing-lg 0;
   }
 }
-h4 h5 h6 {
+h4,
+h5,
+h6 {
   margin: $spacing-sm 0;
   @media screen and (min-width: $screen-md) {
     margin: $spacing-md 0;
   }
 }
 
-span label {
+span,
+label {
   margin: $spacing-sm 0;
   @media screen and (min-width: $screen-md) {
     margin: $spacing-md 0;
@@ -47,4 +52,8 @@ p {
   @media screen and (min-width: $screen-md) {
     margin: $spacing-sm 0;
   }
+}
+
+img {
+  filter: grayscale(100%);
 }

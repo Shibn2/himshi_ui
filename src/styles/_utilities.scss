@@ -72,6 +72,14 @@
   }
 }
 
+.border-rd-sm {
+  border-radius: 5px;
+}
+
+.border-rd-md {
+  border-radius: 10px;
+}
+
 // Flex related items
 .gap-sm {
   gap: $spacing-sm;
@@ -95,36 +103,57 @@
 }
 
 .heading-md {
-  @include font-style($font-size-md, 700, "roboto");
-  @media screen and (min-width: $screen-md) {
-    @include font-style($font-size-lg, 700, "roboto");
+  @include font-style($font-size-md, 500, "lexand-regular");
+  @media screen and (min-width: var(--screen-lg)) {
+    @include font-style($font-size-lg, 500, "lexand-regular");
   }
 }
 
 .heading-lg {
-  @include font-style($font-size-lg, 700, "roboto");
-  @media screen and (min-width: $screen-md) {
-    @include font-style($font-size-xl, 700, "roboto");
+  @include font-style($font-size-lg, 700, "lexand-bold");
+  @media screen and (min-width: var(--screen-lg)) {
+    @include font-style($font-size-xl, 700, "lexand-bold");
+  }
+}
+
+.heading-sm {
+  @include font-style($font-size-sm, 700, "lexand-bold");
+  @media screen and (min-width: var(--screen-lg)) {
+    @include font-style($font-size-md, 700, "lexand-bold");
+  }
+}
+
+.sub-heading-md {
+  @include font-style($font-size-md, 100, "homemade");
+  @media screen and (min-width: var(--screen-lg)) {
+    @include font-style($font-size-lg, 100, "homemade");
+  }
+}
+
+.sub-heading-lg {
+  @include font-style($font-size-lg, 400, "homemade");
+  @media screen and (min-width: var(--screen-lg)) {
+    @include font-style($font-size-xl, 400, "homemade");
   }
 }
 
 .body-text-xsm {
   @include font-style($font-size-xsm, 100, "roboto");
-  @media screen and (min-width: $screen-md) {
+  @media screen and (min-width: var(--screen-lg)) {
     @include font-style($font-size-sm, 100, "roboto");
   }
 }
 
 .body-text-sm {
   @include font-style($font-size-sm, 100, "roboto");
-  @media screen and (min-width: $screen-md) {
+  @media screen and (min-width: var(--screen-lg)) {
     @include font-style($font-size-md, 200, "roboto");
   }
 }
 
 .body-text-md {
   @include font-style($font-size-md, 200, "roboto");
-  @media screen and (min-width: $screen-md) {
+  @media screen and (min-width: var(--screen-lg)) {
     @include font-style($font-size-lg, 200, "roboto");
   }
 }

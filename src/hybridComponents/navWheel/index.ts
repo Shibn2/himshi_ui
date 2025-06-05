@@ -1,1 +1,3 @@
-export * from './navWheel';
+import NavWheel from "./navWheel";
+
+export default NavWheel;

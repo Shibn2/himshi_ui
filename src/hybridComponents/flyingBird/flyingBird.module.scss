@@ -1,0 +1,36 @@
+.flyingbird {
+  position: absolute;
+  animation: flyAcross 10s ease-in-out infinite alternate;
+}
+
+.bird {
+  width: 40px;
+  height: 40px;
+  @media screen and (min-width: var(--screen-sm)) {
+    width: 60px;
+    height: 60px;
+  }
+
+  @media screen and (min-width: var(--screen-md)) {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@keyframes flyAcross {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(-10px) translateY(10vh);
+  }
+  50% {
+    transform: translateX(-5px) translateY(30vh);
+  }
+  75% {
+    transform: translateX(-20px) translateY(45vh);
+  }
+  100% {
+    transform: translateX(0) translateY(60vh);
+  }
+}

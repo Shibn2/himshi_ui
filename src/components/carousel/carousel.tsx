@@ -1,11 +1,12 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './carousel.module.scss';
+import { getRandomGrayHex } from '../../utils';
 
 
 
-const THROTTLE_DELAY = 500;
+const THROTTLE_DELAY = 800;
 
-function throttle(fn, delay){
+function throttle(fn: any, delay: number){
   let isOpen = true;
   return function(this:any, ...args: any[]){
     if(isOpen){
@@ -18,36 +19,47 @@ function throttle(fn, delay){
   }
 }
 
+type slide = {
+  card: React.ReactNode
+  image: string
+}
 
+type carouselPropType = {
+  slidesList: slide[]
+}
 
-export const carousel = ({ slidesList = []}) => {
-  const carouselFrameRef = useRef(null);
+const Carousel: React.FC<carouselPropType> = ({ slidesList = []}) => {
+  const carouselFrameRef = useRef<HTMLDivElement>(null);
   const scrollActiveCount = useRef({ count: 0 });
+  const [currSlide, setCurrSlide] = useState(0)
   
   useEffect(() => {
     const handleWheel = (event: WheelEvent) => {
-      const containerHeight = carouselFrameRef.current.parentElement.clientHeight;
+      const containerHeight = carouselFrameRef?.current?.parentElement?.clientHeight || 1;
       const dir = event.deltaY > 0 ? "down" : "up";
-      console.log('dir->', dir );
+      // console.log('scrollActiveCount.current.count', scrollActiveCount.current.count)
       if(dir === "down") {
         if(scrollActiveCount.current.count < slidesList.length-1){
           scrollActiveCount.current.count++;
-          console.log('-containerHeight * scrollActiveCount.current.count', -(containerHeight * scrollActiveCount.current.count))
-          carouselFrameRef.current.style.transform = `translateY(-${containerHeight * scrollActiveCount.current.count}px)`          
-          console.log('scrollActiveCount.current.count', scrollActiveCount.current.count)
+          setCurrSlide(scrollActiveCount.current.count);
+          if(carouselFrameRef?.current) {
+            carouselFrameRef.current.style.transform = `translateY(-${containerHeight * scrollActiveCount.current.count}px)`          
+
+          }
         } else {
           event.preventDefault()
         }
       } else {
         if(scrollActiveCount.current.count > 0){
           scrollActiveCount.current.count--;
-          carouselFrameRef.current.style.transform = `translateY(-${containerHeight * scrollActiveCount.current.count}px)`
-          console.log('-containerHeight * scrollActiveCount.current.count', -(containerHeight * scrollActiveCount.current.count), 'scrollActiveCount.current.count', scrollActiveCount.current.count)
+          setCurrSlide(scrollActiveCount.current.count);
+          if(carouselFrameRef.current) {
+            carouselFrameRef.current.style.transform = `translateY(-${containerHeight * scrollActiveCount.current.count}px)`
+          }
         } else {
           event.preventDefault();
         }
       }
-      console.log("Mouse scrolled", event.deltaY > 0 ? "down" : "up");
     };
     const throttledHandler = throttle(handleWheel, THROTTLE_DELAY);
     window.addEventListener("wheel", throttledHandler);
@@ -60,15 +72,18 @@ export const carousel = ({ slidesList = []}) => {
     <div ref={carouselFrameRef} className={styles.carousel_frame} >
       { slidesList.map(slide => {
         return <div className={styles.carousel_card}>
-          {slide.text}
+          {slide.card}
       </div>
       })}
     </div>
     <div className={styles.btn_group}>
     { slidesList.map((slide, index) => {
-        return <button className={styles.carousel_card}>
+        return <button className="" style={(currSlide === index) ? { backgroundColor: getRandomGrayHex() } : {}}>
+          <img src={slide.image}/>
       </button>
       })}
     </div>
   </div>;
 };
+
+export default Carousel;

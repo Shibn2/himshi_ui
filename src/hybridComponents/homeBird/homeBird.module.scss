@@ -1,0 +1,33 @@
+.homebird {
+  // your styles here
+  display: flex;
+}
+
+.flower {
+  margin-left: -60px;
+  transform-origin: left center;
+  animation: flutter 1s infinite alternate ease-in-out;
+  width: 100px;
+  height: 260px;
+  @media screen and (min-width: var(--screen-sm)) {
+    width: 120px;
+    height: 260px;
+  }
+
+  @media screen and (min-width: var(--screen-md)) {
+    width: 160px;
+    height: 460px;
+  }
+}
+.bird {
+  position: relative;
+}
+
+@keyframes flutter {
+  0% {
+    transform: skewY(0deg);
+  }
+  100% {
+    transform: skewY(1deg);
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { ExperienceCard } from './experienceCard';
+import ExperienceCard from './experienceCard';
 import acc from '../../assets/images/accenture.webp';
 import { BAR_CHART_ITEMS, BAR_CHART_ITEMS_OPTIONAL } from '../../storybook/constants';
 import BarChart from '../../components/barChart';

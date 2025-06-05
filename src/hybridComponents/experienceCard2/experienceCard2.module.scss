@@ -1,0 +1,114 @@
+.experiencecard2 {
+  // your styles here
+  display: flex;
+  overflow: visible;
+  gap: var(--spacing-md);
+  flex-direction: column;
+  max-width: 1000px;
+  @media screen and (min-width: var(--screen-md)) {
+    flex-direction: row;
+  }
+}
+
+.subTitle {
+  color: transparent;
+  -webkit-text-stroke: 0.6px black;
+  font-weight: 500;
+  /* Optional smoothness: */
+  letter-spacing: 1px;
+}
+.experiencecard__image_frame {
+  overflow: hidden;
+  z-index: -1;
+  width: 100%;
+  position: relative;
+  @media screen and (min-width: var(--screen-md)) {
+    width: 35%;
+  }
+}
+.experiencecard__image {
+  transform: scale(1);
+  transition: transform 1.5s ease-in-out;
+}
+.experiencecard__image_inview {
+  transform: scale(1.1);
+}
+.experiencecard__image_element1 {
+  position: absolute;
+  width: 40px;
+  height: 0px;
+  background-color: var(--light-primary-color);
+  left: 0;
+  z-index: 2;
+  transition: height 1.5s ease-in-out;
+}
+.experiencecard__image_element2 {
+  position: absolute;
+  width: 40px;
+  height: 0px;
+  background-color: var(--light-primary-color);
+  left: 40px;
+  z-index: 2;
+  transition: height 1.5s ease-in-out;
+}
+.experiencecard__image_element3 {
+  position: absolute;
+  height: 70px;
+  @media screen and (min-width: var(--screen-lg)) {
+    height: 100px;
+  }
+  width: 0;
+  background-color: var(--light-primary-color);
+  right: 0;
+  z-index: 2;
+  transition: width 1.5s ease-in-out;
+}
+.experiencecard__content {
+  overflow: visible;
+  position: relative;
+  width: 100%;
+  @media screen and (min-width: var(--screen-md)) {
+    width: 65%;
+  }
+}
+.experimentcard__barchart {
+  transform: translateX(0);
+  transition: transform 2s ease-in-out;
+}
+.experiencecard__title_wrapper {
+  overflow: hidden;
+}
+.experiencecard__title {
+  display: inline-block;
+  animation: riseFromBottom 2s ease-out forwards;
+  transform: translateY(100%);
+  // opacity: 0;
+}
+.experiencecard__text {
+  background-color: var(--light-primary-color);
+  transform: translateX(0);
+  color: var(--secondary-color);
+  @media screen and (min-width: var(--screen-md)) {
+    width: 115%;
+  }
+  transition:
+    transform 1.5s ease-in,
+    height 1s ease-in;
+}
+
+.experiencecard__text_inview {
+  @media screen and (min-width: var(--screen-md)) {
+    transform: translateX(-15%);
+  }
+}
+
+@keyframes riseFromBottom {
+  0% {
+    transform: translateY(100%);
+    // opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    // opacity: 1;
+  }
+}

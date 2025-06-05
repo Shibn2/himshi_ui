@@ -1,14 +1,45 @@
 @font-face {
   font-family: "roboto";
-  src: url("../assets/Roboto/static/Roboto-Regular.ttf") format("ttf");
+  src: url("../assets/fonts/Roboto/Roboto-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "railway";
-  src: url("../assets/Raleway/static/Raleway-Regular.ttf") format("ttf");
+  src: url("../assets/fonts/Raleway/Raleway-Regular.ttf") format("truetype");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "lexand-regular";
+  src: url("../assets/fonts/Lexend/static/Lexend-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "lexand-semi-bold";
+  src: url("../assets/fonts/Lexend/static/Lexend-SemiBold.ttf")
+    format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "lexand-bold";
+  src: url("../assets/fonts/Lexend/static/Lexend-Bold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "homemade";
+  src: url("../assets/fonts/Homemade_Apple/Homemade_Apple/HomemadeApple-Regular.ttf")
+    format("truetype");
+  font-weight: 100;
   font-style: normal;
 }
 

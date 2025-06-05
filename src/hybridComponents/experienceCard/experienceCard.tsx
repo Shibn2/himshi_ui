@@ -1,7 +1,9 @@
 import styles from './experienceCard.module.scss';
-import { ShapeShift } from '../../components/shapeShift';
+import ShapeShift from '../../components/shapeShift';
 import BarChart from '../../components/barChart';
 import { barChartItemType } from '../../components/barChart/barChart';
+import { useEffect } from 'react';
+import { observeScaleInOnView } from '../../utils';
 
 
 type ExperienceCardProps = {
@@ -13,11 +15,14 @@ type ExperienceCardProps = {
   optionalBarChild: React.ReactNode;
 }
 
-export const ExperienceCard: React.FC<ExperienceCardProps> = ({ title, image, children, imageOnLeft, barChartContentList, optionalBarChild}) => {
+const ExperienceCard: React.FC<ExperienceCardProps> = ({ title, image, children, imageOnLeft, barChartContentList, optionalBarChild}) => {
+  useEffect(() => {
+    observeScaleInOnView('.experiencecard_image')
+  }, [])
   return <div className={`${styles.experiencecard} ${imageOnLeft ? styles.reverse : ''}`}>
         
-    <div className={`${styles.experiencecard__image}`}>
-      <img className='test-image' src={image} alt='side image'/>
+    <div className={`${styles.experiencecard__image_frame}`}>
+      <img className={`experiencecard_image ${styles.experiencecard__image}`} src={image} alt='side image'/>
     </div>
     <div className={`${styles.experiencecard__desc} gap-m`}>
       <div className={`${styles.experimentcard__barchart} gap-sm`}>

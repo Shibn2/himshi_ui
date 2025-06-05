@@ -1,3 +1,5 @@
+@import "../../styles/variables";
+
 @keyframes fillSlideIn {
   0% {
     left: -1000px;
@@ -31,7 +33,7 @@
 
   .experiencecard__title {
     color: black;
-    @media (min-width: $screen-md) {
+    @media (min-width: var(--screen-md)) {
       transform: translateX(-100px);
     }
     margin: 0px;
@@ -55,7 +57,7 @@
       height: 100%;
       width: 50%;
       border: 1px solid var(--primary-text-color);
-      @media screen and (min-width: $screen-md) {
+      @media screen and (min-width: var(--screen-md)) {
         border: 2px solid var(--primary-text-color);
       }
       z-index: -1;
@@ -63,11 +65,24 @@
       animation: fillSlideIn 2s ease-out forwards;
     }
   }
-  .experiencecard__image {
+  .experiencecard__image_frame {
     flex: 1;
     max-width: 100%;
-    @media (min-width: $screen-md) {
+    filter: grayscale(100%);
+    overflow: hidden;
+    transform: rotateX(30deg) rotateY(30deg);
+    transform-style: preserve-3d; /* 👈 Keep child 3D */
+    transition: transform 0.8s ease-out;
+    will-change: transform;
+
+    @media (min-width: var(--screen-md)) {
       max-width: 33.3%;
+    }
+    .experiencecard__image {
+      transform: scale(1) translateZ(60px); /* Start smaller */
+      transition: transform 1s cubic-bezier(0.47, -0.02, 0.51, 0.93);
+      will-change: transform;
+      backface-visibility: hidden;
     }
   }
   img {
@@ -84,7 +99,7 @@
     flex-direction: column;
   }
 
-  @media (min-width: $screen-md) {
+  @media (min-width: var(--screen-md)) {
     flex-direction: row;
     &.reverse {
       flex-direction: row-reverse;

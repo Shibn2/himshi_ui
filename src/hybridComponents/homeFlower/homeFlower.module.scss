@@ -1,17 +1,17 @@
-// $screen-sm: var(--screen-sm);
-// $screen-md: var(--screen-md);
-.homebird {
+.flowerWrapper {
   // your styles here
   display: flex;
-  height: 100%;
+
+  width: 250px;
+  height: 450px;
 }
 
 .flower {
   margin-left: -60px;
   transform-origin: left center;
   animation: flutter 1s infinite alternate ease-in-out;
-  width: 100%;
   height: 100%;
+  width: 100%;
   // @media screen and (min-width: 640px) {
   //   width: 120px;
   //   height: 260px;
@@ -21,16 +21,4 @@
   //   width: 160px;
   //   height: 460px;
   // }
-}
-.bird {
-  position: relative;
-}
-
-@keyframes flutter {
-  0% {
-    transform: skewY(0deg);
-  }
-  100% {
-    transform: skewY(1deg);
-  }
 }

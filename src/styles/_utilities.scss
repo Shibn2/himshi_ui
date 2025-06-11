@@ -1,5 +1,3 @@
-@import "./variables.scss";
-
 .flex-row {
   display: flex;
 }
@@ -15,21 +13,21 @@
 
 .padding-sm {
   padding: $spacing-xsm $spacing-xsm;
-  @media screen and (min-width: $screen-md) {
+  @media screen and (min-width: 768px) {
     padding: $spacing-xsm $spacing-sm;
   }
 }
 
 .padding-md {
   padding: $spacing-xsm $spacing-sm;
-  @media screen and (min-width: $screen-md) {
+  @media screen and (min-width: 768px) {
     padding: $spacing-sm $spacing-sm;
   }
 }
 
 .padding-lg {
   padding: $spacing-md $spacing-md;
-  @media screen and (min-width: $screen-md) {
+  @media screen and (min-width: 768px) {
     padding: $spacing-md $spacing-lg;
   }
 }
@@ -38,21 +36,21 @@
 
 .m-sm {
   margin: $spacing-xsm;
-  @media screen and (min-width: $screen-md) {
+  @media screen and (min-width: 768px) {
     margin: $spacing-xsm $spacing-sm;
   }
 }
 
 .m-md {
   margin: $spacing-sm;
-  @media screen and (min-width: $screen-md) {
+  @media screen and (min-width: 768px) {
     margin: $spacing-sm $spacing-md;
   }
 }
 
 .m-lg {
   margin: $spacing-md;
-  @media screen and (min-width: $screen-md) {
+  @media screen and (min-width: 768px) {
     margin: $spacing-md $spacing-lg;
   }
 }
@@ -60,14 +58,14 @@
 // Border
 .border-sm {
   border: 1px solid var(--primary-text-color);
-  @media screen and (min-width: $screen-md) {
+  @media screen and (min-width: 768px) {
     border: 2px solid var(--primary-text-color);
   }
 }
 
 .border-sm {
   border: 2px solid var(--primary-text-color);
-  @media screen and (min-width: $screen-md) {
+  @media screen and (min-width: 768px) {
     border: 3px solid var(--primary-text-color);
   }
 }
@@ -83,77 +81,89 @@
 // Flex related items
 .gap-sm {
   gap: $spacing-sm;
-  @media screen and (min-width: $screen-md) {
+  @media screen and (min-width: 768px) {
     gap: $spacing-md;
   }
 }
 
 .gap-m {
   gap: $spacing-md;
-  @media screen and (min-width: $screen-md) {
+  @media screen and (min-width: 768px) {
     gap: $spacing-lg;
   }
 }
 
 .gap-lg {
   gap: $spacing-lg;
-  @media screen and (min-width: $screen-md) {
+  @media screen and (min-width: 768px) {
     gap: $spacing-xl;
   }
 }
 
+$font-size-xsm: 10px;
+$font-size-sm: 14px;
+$font-size-md: 18px;
+$font-size-lg: 22px;
+$font-size-xl: 36px;
+$font-size-xxl: 52px;
+// heading class sm: 18px - 22px | md: 22px - 36px | lg: 36px - 52px
+
+.heading-sm {
+  @include font-style($font-size-md, 700, "lexand-bold");
+  @media screen and (min-width: 1024px) {
+    @include font-style($font-size-lg, 700, "lexand-bold");
+  }
+}
+
 .heading-md {
-  @include font-style($font-size-md, 500, "lexand-regular");
-  @media screen and (min-width: var(--screen-lg)) {
-    @include font-style($font-size-lg, 500, "lexand-regular");
+  @include font-style($font-size-lg, 500, "lexand-regular");
+  @media screen and (min-width: 1024px) {
+    @include font-style($font-size-xl, 500, "lexand-regular");
   }
 }
 
 .heading-lg {
-  @include font-style($font-size-lg, 700, "lexand-bold");
-  @media screen and (min-width: var(--screen-lg)) {
-    @include font-style($font-size-xl, 700, "lexand-bold");
+  @include font-style($font-size-xl, 700, "lexand-bold");
+  @media screen and (min-width: 1024px) {
+    @include font-style($font-size-xxl, 700, "lexand-bold");
   }
 }
 
-.heading-sm {
-  @include font-style($font-size-sm, 700, "lexand-bold");
-  @media screen and (min-width: var(--screen-lg)) {
-    @include font-style($font-size-md, 700, "lexand-bold");
-  }
-}
+// sub-heading class  md: 14px - 18px | lg: 18px - 22px
 
 .sub-heading-md {
-  @include font-style($font-size-md, 100, "homemade");
-  @media screen and (min-width: var(--screen-lg)) {
-    @include font-style($font-size-lg, 100, "homemade");
+  @include font-style($font-size-sm, 100, "homemade");
+  @media screen and (min-width: 1024px) {
+    @include font-style($font-size-md, 100, "homemade");
   }
 }
 
 .sub-heading-lg {
-  @include font-style($font-size-lg, 400, "homemade");
-  @media screen and (min-width: var(--screen-lg)) {
-    @include font-style($font-size-xl, 400, "homemade");
+  @include font-style($font-size-md, 400, "homemade");
+  @media screen and (min-width: 1024px) {
+    @include font-style($font-size-lg, 400, "homemade");
   }
 }
 
-.body-text-xsm {
+// sub-heading class  xsm: 14px - 18px | sm: 14px - 18px | md: 18px - 22px
+
+.body-text-sm {
   @include font-style($font-size-xsm, 100, "roboto");
-  @media screen and (min-width: var(--screen-lg)) {
+  @media screen and (min-width: 1024px) {
     @include font-style($font-size-sm, 100, "roboto");
   }
 }
 
-.body-text-sm {
+.body-text-md {
   @include font-style($font-size-sm, 100, "roboto");
-  @media screen and (min-width: var(--screen-lg)) {
+  @media screen and (min-width: 1024px) {
     @include font-style($font-size-md, 200, "roboto");
   }
 }
 
-.body-text-md {
+.body-text-lg {
   @include font-style($font-size-md, 200, "roboto");
-  @media screen and (min-width: var(--screen-lg)) {
+  @media screen and (min-width: 1024px) {
     @include font-style($font-size-lg, 200, "roboto");
   }
 }

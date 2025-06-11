@@ -1,3 +1,5 @@
+// $screen-sm: var(--screen-sm);
+// $screen-lg: var(--screen-lg);
 .hometitle {
   // your styles here
   position: relative;
@@ -11,10 +13,10 @@
 }
 .name {
   font-size: 30px;
-  @media screen and (min-width: var(--screen-sm)) {
+  @media screen and (min-width: 640px) {
     font-size: 48px;
   }
-  @media screen and (min-width: var(--screen-lg)) {
+  @media screen and (min-width: 1200px) {
     font-size: 92px;
   }
 }
@@ -24,11 +26,11 @@
   right: 0;
   color: var(--interactive-color);
   font-size: 20px;
-  @media screen and (min-width: var(--screen-sm)) {
+  @media screen and (min-width: 640px) {
     margin-top: -60px;
     font-size: 30px;
   }
-  @media screen and (min-width: var(--screen-lg)) {
+  @media screen and (min-width: 1200px) {
     margin-top: -100px;
     font-size: 52px;
   }

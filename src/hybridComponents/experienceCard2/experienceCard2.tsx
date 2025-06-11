@@ -13,7 +13,7 @@ type ExperienceCard2Props = {
   title: string;
   subTitle: string;
   barChartContentList: barChartItemType[],
-  optionalBarChild: React.ReactNode;
+  optionalBarChild?: React.ReactNode;
 }
 
 export const ExperienceCard2 : React.FC<ExperienceCard2Props> = ({ title, subTitle, image, children, optionalBarChild, barChartContentList,  }) => {
@@ -42,12 +42,12 @@ export const ExperienceCard2 : React.FC<ExperienceCard2Props> = ({ title, subTit
         <img className={`experiencecard_image ${styles.experiencecard__image} ${inView ? styles.experiencecard__image_inview : ''}`} src={image} alt='side image'/>
     </div>
     <div className={`${styles.experiencecard__content}`}>
-      <ShapeShift/>
+      <ShapeShift position={50} />
       <div style={inView && (breakPoint > breakpoints.md) ? {transform: `translateX(-${randomWidth}px`} : {}} className={`${styles.experimentcard__barchart} gap-sm`}>
         {optionalBarChild}
         <BarChart items= {barChartContentList} inView={inView}/>
       </div>
-      <div className={styles.experiencecard__title_wrapper}>
+      <div className={`${styles.experiencecard__title_wrapper} padding-md`}>
         <h4 className={`${styles.experiencecard__title} heading-lg`}>
           {title} <span className={`${styles.subTitle} heading-md`}>{subTitle}</span>
         </h4>

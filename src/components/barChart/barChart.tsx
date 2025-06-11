@@ -15,7 +15,7 @@ export type barChartPropType = {
 }
 
 const BarChart:React.FC<barChartPropType> = ({ items = [], barHeight = 60, inView}) =>{
-    return <div  className={`${styles.barChart} body-text-xsm bar-chart`}>
+    return <div  className={`${styles.barChart} body-text-sm bar-chart`}>
         {items?.map((item) => (<div className={`${styles.itemBar} padding-sm bar-item`} style={{backgroundColor: getRandomGrayHex(), width: `${item?.percentage}%`}}>
             <span className={`${styles.text} ${ inView ? styles.textInview : ''}`}>{item?.label}</span>
         </div>))

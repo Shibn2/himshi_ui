@@ -4,9 +4,12 @@
   overflow: visible;
   gap: var(--spacing-md);
   flex-direction: column;
-  max-width: 1000px;
-  @media screen and (min-width: var(--screen-md)) {
+  width: 100vw;
+  @media screen and (min-width: 768px) {
     flex-direction: row;
+  }
+  @media screen and (min-width: 1024px) {
+    max-width: 1000px;
   }
 }
 
@@ -22,13 +25,18 @@
   z-index: -1;
   width: 100%;
   position: relative;
-  @media screen and (min-width: var(--screen-md)) {
+  overflow: hidden;
+  @media screen and (min-width: 768px) {
     width: 35%;
   }
 }
 .experiencecard__image {
   transform: scale(1);
   transition: transform 1.5s ease-in-out;
+  width: 100%;
+  min-height: 400px;
+  object-fit: cover;
+  overflow: hidden;
 }
 .experiencecard__image_inview {
   transform: scale(1.1);
@@ -37,7 +45,7 @@
   position: absolute;
   width: 40px;
   height: 0px;
-  background-color: var(--light-primary-color);
+  background-color: var(--primary-color);
   left: 0;
   z-index: 2;
   transition: height 1.5s ease-in-out;
@@ -46,7 +54,7 @@
   position: absolute;
   width: 40px;
   height: 0px;
-  background-color: var(--light-primary-color);
+  background-color: var(--primary-color);
   left: 40px;
   z-index: 2;
   transition: height 1.5s ease-in-out;
@@ -54,11 +62,11 @@
 .experiencecard__image_element3 {
   position: absolute;
   height: 70px;
-  @media screen and (min-width: var(--screen-lg)) {
+  @media screen and (min-width: 1024px) {
     height: 100px;
   }
   width: 0;
-  background-color: var(--light-primary-color);
+  background-color: var(--primary-color);
   right: 0;
   z-index: 2;
   transition: width 1.5s ease-in-out;
@@ -67,7 +75,7 @@
   overflow: visible;
   position: relative;
   width: 100%;
-  @media screen and (min-width: var(--screen-md)) {
+  @media screen and (min-width: 768px) {
     width: 65%;
   }
 }
@@ -85,10 +93,10 @@
   // opacity: 0;
 }
 .experiencecard__text {
-  background-color: var(--light-primary-color);
+  background-color: var(--primary-color);
   transform: translateX(0);
   color: var(--secondary-color);
-  @media screen and (min-width: var(--screen-md)) {
+  @media screen and (min-width: 768px) {
     width: 115%;
   }
   transition:
@@ -97,7 +105,7 @@
 }
 
 .experiencecard__text_inview {
-  @media screen and (min-width: var(--screen-md)) {
+  @media screen and (min-width: 1024px) {
     transform: translateX(-15%);
   }
 }

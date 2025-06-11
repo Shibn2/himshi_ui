@@ -1,7 +1,7 @@
 {
   "name": "himshi_ui",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A comprehensive ui library to enable application build easy",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
@@ -11,7 +11,7 @@
     "build:types": "npx tsc",
     "build:rollup": "rollup -c",
     "build": "npx tsc rollup -c",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npm run build:rollup",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "generate": "node scripts/create-component.js",
@@ -21,7 +21,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "himshi_ui": "link:",
     "tslib": "^2.8.1"
   },
   "devDependencies": {

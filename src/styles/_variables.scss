@@ -29,8 +29,8 @@ $font-size-xsm: 10px;
 $font-size-sm: 14px;
 $font-size-md: 18px;
 $font-size-lg: 22px;
-$font-size-xl: 58px;
-$font-size-xxl: 80px;
+$font-size-xl: 36px;
+$font-size-xxl: 52px;
 
 // Define theme variables in :root (Default = Light Theme)
 :root {
@@ -39,17 +39,17 @@ $font-size-xxl: 80px;
   --secondary-text-color: #{$light-secondary-text-color};
   --primary-text-color: #{$light-primary-text-color};
   --background-color: #{$light-primary-color};
-  --interactive-color: #($light-interactive-color);
-  --screen-sm: $screen-sm;
-  --screen-md: $screen-md;
-  --screen-lg: $screen-lg;
-  --screen-xl: $screen-xl;
+  --interactive-color: #{$light-interactive-color};
+  --screen-sm: #{$screen-sm};
+  --screen-md: #{$screen-md};
+  --screen-lg: #{$screen-lg};
+  --screen-xl: #{$screen-xl};
   // Spacing variables
-  --spacing-xsm: $spacing-xsm;
-  --spacing-sm: $spacing-sm;
-  --spacing-md: $spacing-md;
-  --spacing-lg: $spacing-lg;
-  --spacing-xl: $spacing-xl;
+  --spacing-xsm: #{$spacing-xsm};
+  --spacing-sm: #{$spacing-sm};
+  --spacing-md: #{$spacing-md};
+  --spacing-lg: #{$spacing-lg};
+  --spacing-xl: #{$spacing-xl};
 }
 
 // Dark Theme Overrides (for .dark-theme class)

@@ -92,9 +92,10 @@ export default [
           "**/*.gif",
         ],
         limit: 0,
-        fileName: "[dirname][name][extname]",
+        fileName: "[name][extname]",
+        publicPath: "/icons/",
         emitFiles: true,
-        destDir: "dist/assets",
+        destDir: "dist/assets/icons",
       }),
     ],
     external: [

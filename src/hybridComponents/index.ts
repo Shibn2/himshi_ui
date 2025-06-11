@@ -5,3 +5,5 @@ export { default as ExperienceCard2 } from "./experienceCard2/index";
 export { default as HomeProfile } from "./homeProfile/index";
 export { default as HomeTitle } from "./homeTitle/index";
 export { default as HomeBird } from "./homeBird/index";
+export { default as FlyingBird } from "./flyingBird/index";
+export { default as HomeFlower } from "./homeFlower/index";

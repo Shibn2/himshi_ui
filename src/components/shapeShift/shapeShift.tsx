@@ -12,7 +12,7 @@ if (!SvgShape) {
   console.error("❌ Invalid SVG component at index", randomIndex);
   return null;
 }
-  return <div style={{ right: position }} className={styles.shapeshift}>
+  return <div style={{ right: `${position}px` }} className={styles.shapeshift}>
     <SvgShape/>
   </div>;
 };

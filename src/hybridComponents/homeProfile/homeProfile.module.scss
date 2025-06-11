@@ -2,11 +2,13 @@
   // your styles here
   width: 250px;
   height: 400px;
+  overflow: hidden;
 }
 .image {
   object-fit: cover;
   width: 100%;
   height: 100%;
+
   // width: 150px;
   // height: 400px;
   // object-fit: cover;

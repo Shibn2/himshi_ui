@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 export function useBreakpoint() {
   const [breakpoint, setBreakpoint] = useState<
@@ -42,4 +42,22 @@ export function useBreakpointPixel(): number {
   }, []);
 
   return breakpoint;
+}
+
+export function useScrollPercentage(): number {
+  const [scrollPercentage, setScrollPercentage] = useState(0);
+
+  const handleScroll = (e: any) => {
+    const currPageScrollPercentage =
+      (window.scrollY / window.innerHeight) * 100;
+    setScrollPercentage(currPageScrollPercentage);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return scrollPercentage;
 }

@@ -32,6 +32,8 @@ export const ExperienceCard2 : React.FC<ExperienceCard2Props> = ({ title, subTit
     }
   }, []);
 
+ 
+
   const randomWidth =  getRandomNumber(5, 150)
   
   return <div className={styles.experiencecard2} ref={ref}>

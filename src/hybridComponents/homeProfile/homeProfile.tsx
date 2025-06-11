@@ -1,8 +1,14 @@
 import styles from './homeProfile.module.scss';
 import profile from '../../assets/images/profile1.png';
+import { useScrollPercentage } from 'src/hooks';
 
-export const HomeProfile = () => {
+type homeProfilePropType = {
+  scrollPercentage?: number
+}
+export const HomeProfile: React.FC<homeProfilePropType> = () => {
+  const scrollPercentage = useScrollPercentage();
+
   return <div className={styles.homeprofile}>
-    <img className={styles.image} src={profile} alt="" />
+    <img style={{ transform: `translateY(${scrollPercentage}%)`}} className={styles.image} src={profile} alt="" />
   </div>;
 };
